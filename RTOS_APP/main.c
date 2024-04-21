@@ -16,6 +16,28 @@
 #include "semphr.h"
 #include "event_groups.h"
 
+void system_init(void);
+void T_T1(void* pvParam);
+void T_T2(void* pvParam);
+void T_T3(void* pvParam);
+
+
+xSemaphoreHandle mResourceAvailability = NULL;  /* Declare a variable of Semaphore type*/
+#define BLOCK_TIME		1000		/* 1000 Tick time Block time for Checking resource availability*/
+
+
+/*******************	Main	********************/
+int main(void)
+{
+	system_init();
+	mResourceAvailability = xSemaphoreCreateMutex();
+	xTaskCreate(T_T1, NULL, 100, NULL, 1, NULL); /*			Task1			  */
+	xTaskCreate(T_T2, NULL, 100, NULL, 2, NULL); /* Task2 with higher priority*/
+	vTaskStartScheduler(); /* Start Scheduler */
+	return 0;
+}
+
+
 void system_init(void){
 	Leds_AllInit();
 	LCD_Init();
@@ -24,43 +46,25 @@ void system_init(void){
 	Uart_Init(9600);
 	Uart_SendStr("Res App: ");
 }
-void T_T1(void* pvParam);
-void T_T2(void* pvParam);
-void T_T3(void* pvParam);
 
-xSemaphoreHandle mResourceAvailability = NULL;
-int main(void)
-{
-	system_init();
-	mResourceAvailability = xSemaphoreCreateMutex();
-	xTaskCreate(T_T1, NULL, 100, NULL, 1, NULL);
-	xTaskCreate(T_T2, NULL, 100, NULL, 2, NULL);
-	/* xTaskCreate(T_T3, NULL, 100, NULL, 3, NULL); */ 
-	vTaskStartScheduler();
-	return 0;
-}
+/******************		T1, T2(Higher Priority) Sharing the same resource (Same UART Module)		*********/
 void T_T1(void* pvParam){
 	u8 key = 0; 
 	while (1){
-		if (xSemaphoreTake(mResourceAvailability,1000)){
+		if (xSemaphoreTake(mResourceAvailability,BLOCK_TIME)){ /*Check on source availability by using MutixSemaphorm*/
 			Uart_SendStr("AT+SMS\r\n");
 			Uart_SendStr("AT+SMS\r\n");
-			xSemaphoreGive(mResourceAvailability);
+			xSemaphoreGive(mResourceAvailability); /* Give Semaphorm after using resource */
 		}
 	}
 }
 void T_T2(void* pvParam){
 	while (1){ 
-		if (xSemaphoreTake(mResourceAvailability,1000)){
+		if (xSemaphoreTake(mResourceAvailability,BLOCK_TIME)){ /*Check on source availability by using MutixSemaphorm*/
 			Uart_SendStr("AT+Server1\r\n");
 			Uart_SendStr("AT+Server2\r\n");	
-			xSemaphoreGive(mResourceAvailability); 
+			xSemaphoreGive(mResourceAvailability); /* Give Semaphorm after using resource */
 		}
-		vTaskDelay(5);
-	}
-}
-void T_T3(void* pvParam){
-	while (1){
-
+		vTaskDelay(5); /* Delay to jump to wait state to give time to other lower priority tasks */
 	}
 }
