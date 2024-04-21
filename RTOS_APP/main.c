@@ -28,35 +28,40 @@ void T_T1(void* pvParam);
 void T_T2(void* pvParam);
 void T_T3(void* pvParam);
 
-xSemaphoreHandle mResourceAvailability = NULL;
+QueueHandle_t mqUart = NULL; 
 int main(void)
 {
 	system_init();
-	mResourceAvailability = xSemaphoreCreateMutex();
+	mqUart = xQueueCreate(5, 11);  /*Queue Length and Max item size*/
 	xTaskCreate(T_T1, NULL, 100, NULL, 1, NULL);
-	xTaskCreate(T_T2, NULL, 100, NULL, 2, NULL);
-	/* xTaskCreate(T_T3, NULL, 100, NULL, 3, NULL); */ 
+	xTaskCreate(T_T2, NULL, 100, NULL, 2, NULL); 
 	vTaskStartScheduler();
 	return 0;
 }
 void T_T1(void* pvParam){
-	u8 key = 0; 
+	u8 u8Data = 0; 
+	u8 u8Ind = 0;
+	u8 txMsg[11]; 
 	while (1){
-		if (xSemaphoreTake(mResourceAvailability,1000)){
-			Uart_SendStr("AT+SMS\r\n");
-			Uart_SendStr("AT+SMS\r\n");
-			xSemaphoreGive(mResourceAvailability);
+		if (Uart_ReceiveByte_unblock(&u8Data)){ /*End of Receiving*/
+			if (u8Data == 0){
+				txMsg[u8Ind] = 0;  
+				u8Ind = 0; 
+				xQueueSend (mqUart, txMsg, portMAX_DELAY); 
+			}
+			else{ /*Still receiving bytes*/
+				txMsg [u8Ind] = u8Data; 
+				u8Ind++;	
+			}
 		}
 	}
 }
-void T_T2(void* pvParam){
+void T_T2(void* pvParam){ 
+	u8 rxMsg[11]; 
 	while (1){ 
-		if (xSemaphoreTake(mResourceAvailability,1000)){
-			Uart_SendStr("AT+Server1\r\n");
-			Uart_SendStr("AT+Server2\r\n");	
-			xSemaphoreGive(mResourceAvailability); 
+		if (xQueueReceive(mqUart, rxMsg, portMAX_DELAY)){
+			Uart_SendStr(rxMsg);
 		}
-		vTaskDelay(5);
 	}
 }
 void T_T3(void* pvParam){
