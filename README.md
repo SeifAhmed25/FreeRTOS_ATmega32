@@ -8,7 +8,7 @@ This Repo contains FreeRTOS files and basic module drivers to implement projects
 
 ### This Repo mainly contains 4 branches (main, SimpleTasks_Schedualing, BinarySemaphorm, MutixSemaphorm and Queue). 
 
-#### main                    branch containts the FreeRTOS, basic module drivers (ADC, UART, KEYPAD, LEDS), You can take them and use them directly in your project. 
+### main                    branch containts the FreeRTOS, basic module drivers (ADC, UART, KEYPAD, LEDS), You can take them and use them directly in your project. 
 
 ### SimpleTasks_Scheduling   branch contains simple application on using the FreeRTOS to simply scheduel 3 Tasks with different Priorities.
 
