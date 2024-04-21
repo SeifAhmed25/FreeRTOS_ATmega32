@@ -19,44 +19,48 @@
 void system_init(void){
 	Leds_AllInit();
 	LCD_Init();
-	LCD_DispStrXY(1,1,(u8*)"System Initiated");
+	LCD_DispStrXY(1,1,(u8*)"Res App: ");
 	Key_Init();
+	Uart_Init(9600);
+	Uart_SendStr("Res App: ");
 }
 void T_T1(void* pvParam);
 void T_T2(void* pvParam);
 void T_T3(void* pvParam);
 
-xSemaphoreHandle bsEventKeyPressed = NULL;
+xSemaphoreHandle mResourceAvailability = NULL;
 int main(void)
 {
 	system_init();
-	bsEventKeyPressed = xSemaphoreCreateBinary();
-	xTaskCreate(T_T1, NULL, 100, NULL, 2, NULL);
-	xTaskCreate(T_T2, NULL, 100, NULL, 3, NULL);
-	xTaskCreate(T_T3, NULL, 100, NULL, 1, NULL); 
+	mResourceAvailability = xSemaphoreCreateMutex();
+	xTaskCreate(T_T1, NULL, 100, NULL, 1, NULL);
+	xTaskCreate(T_T2, NULL, 100, NULL, 2, NULL);
+	/* xTaskCreate(T_T3, NULL, 100, NULL, 3, NULL); */ 
 	vTaskStartScheduler();
 	return 0;
 }
 void T_T1(void* pvParam){
 	u8 key = 0; 
 	while (1){
-		key = Key_GetKey();
-		if (key){
-			xSemaphoreGive(bsEventKeyPressed);
+		if (xSemaphoreTake(mResourceAvailability,1000)){
+			Uart_SendStr("AT+SMS\r\n");
+			Uart_SendStr("AT+SMS\r\n");
+			xSemaphoreGive(mResourceAvailability);
 		}
-		vTaskDelay(50);
 	}
 }
 void T_T2(void* pvParam){
-	while (1){
-		if (xSemaphoreTake(bsEventKeyPressed,1000)){;
-			Led_Toggle(LED_BLUE);
+	while (1){ 
+		if (xSemaphoreTake(mResourceAvailability,1000)){
+			Uart_SendStr("AT+Server1\r\n");
+			Uart_SendStr("AT+Server2\r\n");	
+			xSemaphoreGive(mResourceAvailability); 
 		}
+		vTaskDelay(5);
 	}
 }
 void T_T3(void* pvParam){
 	while (1){
-		Led_Toggle(LED_GREEN);
-		vTaskDelay(300);
+
 	}
 }
