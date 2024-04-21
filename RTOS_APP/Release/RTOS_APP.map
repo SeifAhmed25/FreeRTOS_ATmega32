@@ -72,11 +72,8 @@ Discarded input sections
  .text          0x00000000        0x0 Drivers/src/Keypad.o
  .data          0x00000000        0x0 Drivers/src/Keypad.o
  .bss           0x00000000        0x0 Drivers/src/Keypad.o
- .text.Key_GetKey
-                0x00000000       0x94 Drivers/src/Keypad.o
  .text.Key_Scan
                 0x00000000       0x84 Drivers/src/Keypad.o
- .rodata.keys   0x00000000        0x9 Drivers/src/Keypad.o
  .text          0x00000000        0x0 Drivers/src/LCD.o
  .data          0x00000000        0x0 Drivers/src/LCD.o
  .bss           0x00000000        0x0 Drivers/src/LCD.o
@@ -217,26 +214,12 @@ Discarded input sections
  .text          0x00000000        0x0 FreeRTOS/Src/queue.o
  .data          0x00000000        0x0 FreeRTOS/Src/queue.o
  .bss           0x00000000        0x0 FreeRTOS/Src/queue.o
- .text.prvCopyDataToQueue
-                0x00000000       0xac FreeRTOS/Src/queue.o
- .text.prvCopyDataFromQueue
-                0x00000000       0x34 FreeRTOS/Src/queue.o
- .text.prvUnlockQueue
-                0x00000000       0x7c FreeRTOS/Src/queue.o
- .text.xQueueGenericReset
-                0x00000000       0x74 FreeRTOS/Src/queue.o
- .text.xQueueGenericCreate
-                0x00000000       0x56 FreeRTOS/Src/queue.o
  .text.xQueueCreateCountingSemaphore
                 0x00000000       0x18 FreeRTOS/Src/queue.o
- .text.xQueueGenericSend
-                0x00000000      0x134 FreeRTOS/Src/queue.o
  .text.xQueueCreateMutex
                 0x00000000       0x58 FreeRTOS/Src/queue.o
  .text.xQueueGenericSendFromISR
                 0x00000000       0x6c FreeRTOS/Src/queue.o
- .text.xQueueGenericReceive
-                0x00000000      0x176 FreeRTOS/Src/queue.o
  .text.xQueueReceiveFromISR
                 0x00000000       0x5a FreeRTOS/Src/queue.o
  .text.xQueuePeekFromISR
@@ -261,7 +244,6 @@ Discarded input sections
                 0x00000000       0x46 FreeRTOS/Src/queue.o
  .text.xQueueCRReceiveFromISR
                 0x00000000       0x7a FreeRTOS/Src/queue.o
- .comment       0x00000000       0x31 FreeRTOS/Src/queue.o
  .text          0x00000000        0x0 FreeRTOS/Src/tasks.o
  .data          0x00000000        0x0 FreeRTOS/Src/tasks.o
  .bss           0x00000000        0x0 FreeRTOS/Src/tasks.o
@@ -281,30 +263,14 @@ Discarded input sections
                 0x00000000        0x6 FreeRTOS/Src/tasks.o
  .text.vTaskDelayUntil
                 0x00000000       0x78 FreeRTOS/Src/tasks.o
- .text.vTaskPlaceOnEventList
-                0x00000000       0x38 FreeRTOS/Src/tasks.o
  .text.vTaskPlaceOnUnorderedEventList
                 0x00000000       0x46 FreeRTOS/Src/tasks.o
- .text.xTaskRemoveFromEventList
-                0x00000000       0x80 FreeRTOS/Src/tasks.o
  .text.xTaskRemoveFromUnorderedEventList
                 0x00000000       0x68 FreeRTOS/Src/tasks.o
- .text.vTaskSetTimeOutState
-                0x00000000       0x16 FreeRTOS/Src/tasks.o
- .text.xTaskCheckForTimeOut
-                0x00000000       0x58 FreeRTOS/Src/tasks.o
- .text.vTaskMissedYield
-                0x00000000        0x8 FreeRTOS/Src/tasks.o
  .text.xTaskGetCurrentTaskHandle
                 0x00000000        0xa FreeRTOS/Src/tasks.o
- .text.vTaskPriorityInherit
-                0x00000000       0xb2 FreeRTOS/Src/tasks.o
- .text.xTaskPriorityDisinherit
-                0x00000000       0x74 FreeRTOS/Src/tasks.o
  .text.uxTaskResetEventItemValue
                 0x00000000       0x2e FreeRTOS/Src/tasks.o
- .text.pvTaskIncrementMutexHeldCount
-                0x00000000       0x24 FreeRTOS/Src/tasks.o
  .text          0x00000000        0x0 main.o
  .data          0x00000000        0x0 main.o
  .bss           0x00000000        0x0 main.o
@@ -455,8 +421,6 @@ Discarded input sections
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(memcpy.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(memcpy.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(memcpy.o)
- .text.avr-libc
-                0x00000000       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(memcpy.o)
  .text          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(sprintf.o)
  .data          0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(sprintf.o)
  .bss           0x00000000        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(sprintf.o)
@@ -662,7 +626,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0xdc6
+.text           0x00000000     0x15f0
  *(.vectors)
  .vectors       0x00000000       0x54 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.7.374/gcc/dev/atmega32/avr5/crtatmega32.o
                 0x00000000                __vector_default
@@ -761,109 +725,157 @@ END GROUP
  .text.Key_Init
                 0x000000ca       0x1a Drivers/src/Keypad.o
                 0x000000ca                Key_Init
+ .text.Key_GetKey
+                0x000000e4       0x94 Drivers/src/Keypad.o
+                0x000000e4                Key_GetKey
  .text.LCD_Latch
-                0x000000e4        0xe Drivers/src/LCD.o
+                0x00000178        0xe Drivers/src/LCD.o
  .text.LCD_SendCMD
-                0x000000f2       0x58 Drivers/src/LCD.o
+                0x00000186       0x58 Drivers/src/LCD.o
  .text.LCD_GotoXY
-                0x0000014a       0x10 Drivers/src/LCD.o
+                0x000001de       0x10 Drivers/src/LCD.o
  .text.LCD_SendData
-                0x0000015a       0x58 Drivers/src/LCD.o
+                0x000001ee       0x58 Drivers/src/LCD.o
  .text.LCD_RetHome
-                0x000001b2       0x14 Drivers/src/LCD.o
-                0x000001b2                LCD_RetHome
+                0x00000246       0x14 Drivers/src/LCD.o
+                0x00000246                LCD_RetHome
  .text.LCD_Clear
-                0x000001c6       0x14 Drivers/src/LCD.o
-                0x000001c6                LCD_Clear
+                0x0000025a       0x14 Drivers/src/LCD.o
+                0x0000025a                LCD_Clear
  .text.LCD_Init
-                0x000001da       0x38 Drivers/src/LCD.o
-                0x000001da                LCD_Init
+                0x0000026e       0x38 Drivers/src/LCD.o
+                0x0000026e                LCD_Init
  .text.LCD_DispStr
-                0x00000212       0x26 Drivers/src/LCD.o
-                0x00000212                LCD_DispStr
+                0x000002a6       0x26 Drivers/src/LCD.o
+                0x000002a6                LCD_DispStr
  .text.LCD_DispStrXY
-                0x00000238       0x14 Drivers/src/LCD.o
-                0x00000238                LCD_DispStrXY
+                0x000002cc       0x14 Drivers/src/LCD.o
+                0x000002cc                LCD_DispStrXY
  .text.pvPortMalloc
-                0x0000024c       0x64 FreeRTOS/Src/heap_1.o
-                0x0000024c                pvPortMalloc
+                0x000002e0       0x64 FreeRTOS/Src/heap_1.o
+                0x000002e0                pvPortMalloc
  .text.vPortFree
-                0x000002b0        0x2 FreeRTOS/Src/heap_1.o
-                0x000002b0                vPortFree
+                0x00000344        0x2 FreeRTOS/Src/heap_1.o
+                0x00000344                vPortFree
  .text.vListInitialise
-                0x000002b2       0x1c FreeRTOS/Src/list.o
-                0x000002b2                vListInitialise
+                0x00000346       0x1c FreeRTOS/Src/list.o
+                0x00000346                vListInitialise
  .text.vListInitialiseItem
-                0x000002ce        0x8 FreeRTOS/Src/list.o
-                0x000002ce                vListInitialiseItem
+                0x00000362        0x8 FreeRTOS/Src/list.o
+                0x00000362                vListInitialiseItem
  .text.vListInsertEnd
-                0x000002d6       0x42 FreeRTOS/Src/list.o
-                0x000002d6                vListInsertEnd
+                0x0000036a       0x42 FreeRTOS/Src/list.o
+                0x0000036a                vListInsertEnd
  .text.vListInsert
-                0x00000318       0x70 FreeRTOS/Src/list.o
-                0x00000318                vListInsert
+                0x000003ac       0x70 FreeRTOS/Src/list.o
+                0x000003ac                vListInsert
  .text.uxListRemove
-                0x00000388       0x46 FreeRTOS/Src/list.o
-                0x00000388                uxListRemove
+                0x0000041c       0x46 FreeRTOS/Src/list.o
+                0x0000041c                uxListRemove
  .text.pxPortInitialiseStack
-                0x000003ce       0xd8 FreeRTOS/Src/port.o
-                0x000003ce                pxPortInitialiseStack
+                0x00000462       0xd8 FreeRTOS/Src/port.o
+                0x00000462                pxPortInitialiseStack
  .text.xPortStartScheduler
-                0x000004a6       0x6a FreeRTOS/Src/port.o
-                0x000004a6                xPortStartScheduler
+                0x0000053a       0x6a FreeRTOS/Src/port.o
+                0x0000053a                xPortStartScheduler
  .text.vPortYield
-                0x00000510       0xb2 FreeRTOS/Src/port.o
-                0x00000510                vPortYield
+                0x000005a4       0xb2 FreeRTOS/Src/port.o
+                0x000005a4                vPortYield
  .text.vPortYieldFromTick
-                0x000005c2       0xb8 FreeRTOS/Src/port.o
-                0x000005c2                vPortYieldFromTick
+                0x00000656       0xb8 FreeRTOS/Src/port.o
+                0x00000656                vPortYieldFromTick
  .text.__vector_7
-                0x0000067a        0x6 FreeRTOS/Src/port.o
-                0x0000067a                __vector_7
+                0x0000070e        0x6 FreeRTOS/Src/port.o
+                0x0000070e                __vector_7
+ .text.prvCopyDataToQueue
+                0x00000714       0xac FreeRTOS/Src/queue.o
+ .text.prvCopyDataFromQueue
+                0x000007c0       0x34 FreeRTOS/Src/queue.o
+ .text.prvUnlockQueue
+                0x000007f4       0x7c FreeRTOS/Src/queue.o
+ .text.xQueueGenericReset
+                0x00000870       0x74 FreeRTOS/Src/queue.o
+                0x00000870                xQueueGenericReset
+ .text.xQueueGenericCreate
+                0x000008e4       0x56 FreeRTOS/Src/queue.o
+                0x000008e4                xQueueGenericCreate
+ .text.xQueueGenericSend
+                0x0000093a      0x134 FreeRTOS/Src/queue.o
+                0x0000093a                xQueueGenericSend
+ .text.xQueueGenericReceive
+                0x00000a6e      0x176 FreeRTOS/Src/queue.o
+                0x00000a6e                xQueueGenericReceive
  .text.prvResetNextTaskUnblockTime
-                0x00000680       0x36 FreeRTOS/Src/tasks.o
+                0x00000be4       0x36 FreeRTOS/Src/tasks.o
  .text.prvAddCurrentTaskToDelayedList
-                0x000006b6       0x70 FreeRTOS/Src/tasks.o
+                0x00000c1a       0x70 FreeRTOS/Src/tasks.o
  .text.xTaskGenericCreate
-                0x00000726      0x1ec FreeRTOS/Src/tasks.o
-                0x00000726                xTaskGenericCreate
+                0x00000c8a      0x1ec FreeRTOS/Src/tasks.o
+                0x00000c8a                xTaskGenericCreate
  .text.vTaskStartScheduler
-                0x00000912       0x64 FreeRTOS/Src/tasks.o
-                0x00000912                vTaskStartScheduler
+                0x00000e76       0x64 FreeRTOS/Src/tasks.o
+                0x00000e76                vTaskStartScheduler
  .text.vTaskSuspendAll
-                0x00000976        0xc FreeRTOS/Src/tasks.o
-                0x00000976                vTaskSuspendAll
+                0x00000eda        0xc FreeRTOS/Src/tasks.o
+                0x00000eda                vTaskSuspendAll
  .text.xTaskIncrementTick
-                0x00000982      0x15e FreeRTOS/Src/tasks.o
-                0x00000982                xTaskIncrementTick
+                0x00000ee6      0x15e FreeRTOS/Src/tasks.o
+                0x00000ee6                xTaskIncrementTick
  .text.xTaskResumeAll
-                0x00000ae0       0xe0 FreeRTOS/Src/tasks.o
-                0x00000ae0                xTaskResumeAll
+                0x00001044       0xe0 FreeRTOS/Src/tasks.o
+                0x00001044                xTaskResumeAll
  .text.vTaskDelay
-                0x00000bc0       0x42 FreeRTOS/Src/tasks.o
-                0x00000bc0                vTaskDelay
+                0x00001124       0x42 FreeRTOS/Src/tasks.o
+                0x00001124                vTaskDelay
  .text.prvIdleTask
-                0x00000c02       0x68 FreeRTOS/Src/tasks.o
+                0x00001166       0x68 FreeRTOS/Src/tasks.o
  .text.vTaskSwitchContext
-                0x00000c6a       0x98 FreeRTOS/Src/tasks.o
-                0x00000c6a                vTaskSwitchContext
- .text.T_T1     0x00000d02       0x10 main.o
-                0x00000d02                T_T1
- .text.T_T2     0x00000d12       0x10 main.o
-                0x00000d12                T_T2
- .text.T_T3     0x00000d22       0x10 main.o
-                0x00000d22                T_T3
+                0x000011ce       0x98 FreeRTOS/Src/tasks.o
+                0x000011ce                vTaskSwitchContext
+ .text.vTaskPlaceOnEventList
+                0x00001266       0x38 FreeRTOS/Src/tasks.o
+                0x00001266                vTaskPlaceOnEventList
+ .text.xTaskRemoveFromEventList
+                0x0000129e       0x80 FreeRTOS/Src/tasks.o
+                0x0000129e                xTaskRemoveFromEventList
+ .text.vTaskSetTimeOutState
+                0x0000131e       0x16 FreeRTOS/Src/tasks.o
+                0x0000131e                vTaskSetTimeOutState
+ .text.xTaskCheckForTimeOut
+                0x00001334       0x58 FreeRTOS/Src/tasks.o
+                0x00001334                xTaskCheckForTimeOut
+ .text.vTaskMissedYield
+                0x0000138c        0x8 FreeRTOS/Src/tasks.o
+                0x0000138c                vTaskMissedYield
+ .text.vTaskPriorityInherit
+                0x00001394       0xb2 FreeRTOS/Src/tasks.o
+                0x00001394                vTaskPriorityInherit
+ .text.xTaskPriorityDisinherit
+                0x00001446       0x74 FreeRTOS/Src/tasks.o
+                0x00001446                xTaskPriorityDisinherit
+ .text.pvTaskIncrementMutexHeldCount
+                0x000014ba       0x24 FreeRTOS/Src/tasks.o
+                0x000014ba                pvTaskIncrementMutexHeldCount
+ .text.T_T1     0x000014de       0x28 main.o
+                0x000014de                T_T1
+ .text.T_T2     0x00001506       0x22 main.o
+                0x00001506                T_T2
+ .text.T_T3     0x00001528       0x10 main.o
+                0x00001528                T_T3
  .text.system_init
-                0x00000d32       0x18 main.o
-                0x00000d32                system_init
+                0x00001538       0x18 main.o
+                0x00001538                system_init
  .text.startup.main
-                0x00000d4a       0x78 main.o
-                0x00000d4a                main
-                0x00000dc2                . = ALIGN (0x2)
+                0x00001550       0x8a main.o
+                0x00001550                main
+ .text.avr-libc
+                0x000015da       0x12 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5\libc.a(memcpy.o)
+                0x000015da                memcpy
+                0x000015ec                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000dc2        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x00000dc2                _exit
-                0x00000dc2                exit
+ .fini9         0x000015ec        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x000015ec                _exit
+                0x000015ec                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -882,11 +894,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000dc2        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x000015ec        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000dc6                _etext = .
+                0x000015f0                _etext = .
 
-.data           0x00800060       0x18 load address 0x00000dc6
+.data           0x00800060       0x22 load address 0x000015f0
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -895,71 +907,76 @@ END GROUP
  *(.gnu.linkonce.d*)
  *(.rodata)
  *(.rodata*)
+ .rodata.keys   0x00800062        0x9 Drivers/src/Keypad.o
  .rodata.str1.1
-                0x00800062        0x5 FreeRTOS/Src/tasks.o
+                0x0080006b        0x5 FreeRTOS/Src/tasks.o
  .rodata.str1.1
-                0x00800067       0x11 main.o
+                0x00800070       0x11 main.o
  *(.gnu.linkonce.r*)
-                0x00800078                . = ALIGN (0x2)
-                0x00800078                _edata = .
-                0x00800078                PROVIDE (__data_end, .)
+                0x00800082                . = ALIGN (0x2)
+ *fill*         0x00800081        0x1 
+                0x00800082                _edata = .
+                0x00800082                PROVIDE (__data_end, .)
 
-.bss            0x00800078      0x4db
-                0x00800078                PROVIDE (__bss_start, .)
+.bss            0x00800082      0x4dd
+                0x00800082                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
  .bss.pucAlignedHeap.1980
-                0x00800078        0x2 FreeRTOS/Src/heap_1.o
+                0x00800082        0x2 FreeRTOS/Src/heap_1.o
  .bss.xNextFreeByte
-                0x0080007a        0x2 FreeRTOS/Src/heap_1.o
- .bss.ucHeap    0x0080007c      0x47e FreeRTOS/Src/heap_1.o
+                0x00800084        0x2 FreeRTOS/Src/heap_1.o
+ .bss.ucHeap    0x00800086      0x47e FreeRTOS/Src/heap_1.o
  .bss.uxSchedulerSuspended
-                0x008004fa        0x1 FreeRTOS/Src/tasks.o
- .bss.uxTaskNumber
-                0x008004fb        0x1 FreeRTOS/Src/tasks.o
- .bss.xNumOfOverflows
-                0x008004fc        0x1 FreeRTOS/Src/tasks.o
- .bss.xYieldPending
-                0x008004fd        0x1 FreeRTOS/Src/tasks.o
- .bss.uxPendedTicks
-                0x008004fe        0x1 FreeRTOS/Src/tasks.o
- .bss.xSchedulerRunning
-                0x008004ff        0x1 FreeRTOS/Src/tasks.o
- .bss.uxTopReadyPriority
-                0x00800500        0x1 FreeRTOS/Src/tasks.o
- .bss.xTickCount
-                0x00800501        0x2 FreeRTOS/Src/tasks.o
- .bss.uxCurrentNumberOfTasks
-                0x00800503        0x1 FreeRTOS/Src/tasks.o
- .bss.uxTasksDeleted
                 0x00800504        0x1 FreeRTOS/Src/tasks.o
+ .bss.uxTaskNumber
+                0x00800505        0x1 FreeRTOS/Src/tasks.o
+ .bss.xNumOfOverflows
+                0x00800506        0x1 FreeRTOS/Src/tasks.o
+ .bss.xYieldPending
+                0x00800507        0x1 FreeRTOS/Src/tasks.o
+ .bss.uxPendedTicks
+                0x00800508        0x1 FreeRTOS/Src/tasks.o
+ .bss.xSchedulerRunning
+                0x00800509        0x1 FreeRTOS/Src/tasks.o
+ .bss.uxTopReadyPriority
+                0x0080050a        0x1 FreeRTOS/Src/tasks.o
+ .bss.xTickCount
+                0x0080050b        0x2 FreeRTOS/Src/tasks.o
+ .bss.uxCurrentNumberOfTasks
+                0x0080050d        0x1 FreeRTOS/Src/tasks.o
+ .bss.uxTasksDeleted
+                0x0080050e        0x1 FreeRTOS/Src/tasks.o
  .bss.xTasksWaitingTermination
-                0x00800505        0x9 FreeRTOS/Src/tasks.o
+                0x0080050f        0x9 FreeRTOS/Src/tasks.o
  .bss.xPendingReadyList
-                0x0080050e        0x9 FreeRTOS/Src/tasks.o
+                0x00800518        0x9 FreeRTOS/Src/tasks.o
  .bss.pxOverflowDelayedTaskList
-                0x00800517        0x2 FreeRTOS/Src/tasks.o
+                0x00800521        0x2 FreeRTOS/Src/tasks.o
  .bss.pxDelayedTaskList
-                0x00800519        0x2 FreeRTOS/Src/tasks.o
+                0x00800523        0x2 FreeRTOS/Src/tasks.o
  .bss.xDelayedTaskList2
-                0x0080051b        0x9 FreeRTOS/Src/tasks.o
+                0x00800525        0x9 FreeRTOS/Src/tasks.o
  .bss.xDelayedTaskList1
-                0x00800524        0x9 FreeRTOS/Src/tasks.o
+                0x0080052e        0x9 FreeRTOS/Src/tasks.o
  .bss.pxReadyTasksLists
-                0x0080052d       0x24 FreeRTOS/Src/tasks.o
+                0x00800537       0x24 FreeRTOS/Src/tasks.o
  .bss.pxCurrentTCB
-                0x00800551        0x2 FreeRTOS/Src/tasks.o
-                0x00800551                pxCurrentTCB
+                0x0080055b        0x2 FreeRTOS/Src/tasks.o
+                0x0080055b                pxCurrentTCB
+ .bss.bsEventKeyPressed
+                0x0080055d        0x2 main.o
+                0x0080055d                bsEventKeyPressed
  *(COMMON)
-                0x00800553                PROVIDE (__bss_end, .)
-                0x00000dc6                __data_load_start = LOADADDR (.data)
-                0x00000dde                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x0080055f                PROVIDE (__bss_end, .)
+                0x000015f0                __data_load_start = LOADADDR (.data)
+                0x00001612                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800553        0x0
+.noinit         0x0080055f        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x00800553                _end = .
+                0x0080055f                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -1008,6 +1025,7 @@ END GROUP
  .comment       0x00000030       0x31 FreeRTOS/Src/heap_1.o
  .comment       0x00000030       0x31 FreeRTOS/Src/list.o
  .comment       0x00000030       0x31 FreeRTOS/Src/port.o
+ .comment       0x00000030       0x31 FreeRTOS/Src/queue.o
  .comment       0x00000030       0x31 FreeRTOS/Src/tasks.o
  .comment       0x00000030       0x31 main.o
 

@@ -26,30 +26,37 @@ void T_T1(void* pvParam);
 void T_T2(void* pvParam);
 void T_T3(void* pvParam);
 
+xSemaphoreHandle bsEventKeyPressed = NULL;
 int main(void)
 {
 	system_init();
-	xTaskCreate(T_T1, NULL, 100, NULL, 1, NULL);
-	xTaskCreate(T_T2, NULL, 100, NULL, 2, NULL);
-	xTaskCreate(T_T3, NULL, 100, NULL, 3, NULL);
+	bsEventKeyPressed = xSemaphoreCreateBinary();
+	xTaskCreate(T_T1, NULL, 100, NULL, 2, NULL);
+	xTaskCreate(T_T2, NULL, 100, NULL, 3, NULL);
+	xTaskCreate(T_T3, NULL, 100, NULL, 1, NULL); 
 	vTaskStartScheduler();
 	return 0;
 }
 void T_T1(void* pvParam){
+	u8 key = 0; 
 	while (1){
-		Led_Toggle(LED_YELLOW);
-		vTaskDelay(1000);
+		key = Key_GetKey();
+		if (key){
+			xSemaphoreGive(bsEventKeyPressed);
+		}
+		vTaskDelay(50);
 	}
 }
 void T_T2(void* pvParam){
 	while (1){
-		Led_Toggle(LED_BLUE);
-		vTaskDelay(1000);
+		if (xSemaphoreTake(bsEventKeyPressed,1000)){;
+			Led_Toggle(LED_BLUE);
+		}
 	}
 }
 void T_T3(void* pvParam){
 	while (1){
 		Led_Toggle(LED_GREEN);
-		vTaskDelay(1000);
+		vTaskDelay(300);
 	}
 }
