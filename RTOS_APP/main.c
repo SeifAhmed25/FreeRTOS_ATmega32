@@ -16,17 +16,14 @@
 #include "semphr.h"
 #include "event_groups.h"
 
-void system_init(void){
-	Leds_AllInit();
-	LCD_Init();
-	LCD_DispStrXY(1,1,(u8*)"System Initiated");
-	Key_Init();
-}
+void system_init(void);
 void T_T1(void* pvParam);
 void T_T2(void* pvParam);
 void T_T3(void* pvParam);
 
-xSemaphoreHandle bsEventKeyPressed = NULL;
+xSemaphoreHandle bsEventKeyPressed = NULL; /* Declare a variable of Semaphorm type*/ 
+#define BlockTime     /* Block Time for Task waiting on Event to take place */ 
+
 int main(void)
 {
 	system_init();
@@ -36,27 +33,35 @@ int main(void)
 	xTaskCreate(T_T3, NULL, 100, NULL, 1, NULL); 
 	vTaskStartScheduler();
 	return 0;
+} 
+void system_init(void){
+	Leds_AllInit();
+	LCD_Init();
+	LCD_DispStrXY(1,1,(u8*)"System Initiated");
+	Key_Init();
 }
-void T_T1(void* pvParam){
+
+void T_T1(void* pvParam){ /*Task1 Medium Priority*/
 	u8 key = 0; 
 	while (1){
 		key = Key_GetKey();
 		if (key){
-			xSemaphoreGive(bsEventKeyPressed);
+			xSemaphoreGive(bsEventKeyPressed); /* If Key is pressed then give Semaphorm to indicate event heppend*/
 		}
 		vTaskDelay(50);
 	}
 }
-void T_T2(void* pvParam){
-	while (1){
-		if (xSemaphoreTake(bsEventKeyPressed,1000)){;
+void T_T2(void* pvParam){ /*Task2 Highest Priority*/
+	while (1){ 
+		if (xSemaphoreTake(bsEventKeyPressed,BlockTime)){ /* Check on Semaphorm Status indicating event happend*/
 			Led_Toggle(LED_BLUE);
 		}
 	}
 }
-void T_T3(void* pvParam){
+void T_T3(void* pvParam){ /*Task3 Lowest Priority*/
 	while (1){
 		Led_Toggle(LED_GREEN);
 		vTaskDelay(300);
 	}
 }
+
