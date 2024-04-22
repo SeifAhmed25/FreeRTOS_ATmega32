@@ -6,13 +6,15 @@ This Repo contains FreeRTOS files and basic module drivers to implement projects
 
 ## How do set-up work? 
 
-### This Repo mainly contains 4 branches (main, SimpleTasks_Schedualing, BinarySemaphorm, MutixSemaphorm and Queue). 
+This Repo mainly contains 4 branches (main, SimpleTasks_Schedualing, BinarySemaphorm, MutixSemaphorm and Queue). 
 
 > #### main branch
   containts the FreeRTOS, basic module drivers (ADC, UART, KEYPAD, LEDS), You can take them and use them directly in your project. 
 
 > #### SimpleTasks_Scheduling branch
   contains simple application on using the FreeRTOS to simply scheduel 3 Tasks with different Priorities.
+  
+  ![SimpleTasks](https://github.com/SeifAhmed25/FreeRTOS_ATmega32/assets/64741466/0c58ad42-116d-43ca-a6d6-9a36faa57e45)
 
 > #### BinarySemaphorm branch
   contains simple application on using the FreeRTOS to schedule 3 Tasks with different priorities one of them depending on an event (Button to be pressed).
@@ -38,9 +40,8 @@ Note that Clock Frequency must be defined in the Configuration file of the FreeR
 
 ### DockLight Software (very usefull here) 
 
-You can use DockLight Software to check on sent/received data via UART Module using a serial USB/TTL Converter. 
+You can use DockLight Software to check on sent/received data via UART Module using a serial USB/TTL Converter, make sure of using the same Baudrate configuration between Docklight and the ATmega32.  
 
-### All applcations on the all branches (except main branch) was implemented using Microchip Atmel Studio 
+### All applcations on all branches (except main branch) was implemented using Microchip Atmel Studio 
 
 You can use them the application direct if you are using the same IDE or you can use the Drivers/FreeRTOS files and use them in a different IDE, but you mast take into consideration adding your relative paths to your enviroment. 
-
